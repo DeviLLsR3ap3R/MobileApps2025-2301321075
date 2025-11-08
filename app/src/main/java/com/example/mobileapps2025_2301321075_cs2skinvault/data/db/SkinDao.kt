@@ -1,5 +1,6 @@
 package com.example.mobileapps2025_2301321075_cs2skinvault.data.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -10,14 +11,14 @@ import com.example.mobileapps2025_2301321075_cs2skinvault.data.models.Skin
 @Dao
 interface SkinDao {
     @Insert
-    fun insertSkin(skin: Skin)
+    suspend fun insertSkin(skin: Skin)
 
     @Update
-    fun updateSkin(skin: Skin)
+    suspend fun updateSkin(skin: Skin)
 
     @Delete
-    fun deleteSkin(skin: Skin)
+    suspend fun deleteSkin(skin: Skin)
 
     @Query("SELECT * FROM skins")
-    fun getAllSkins(): List<Skin>
+    fun getAllSkins(): LiveData<List<Skin>>
 }
