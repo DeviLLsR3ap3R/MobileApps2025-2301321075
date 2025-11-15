@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">MobileApps2025-2301321075-CS2SkinVault</string>
+    <string name="app_name">CS2SkinVault</string>
+    <string name="add_skin">Add Skin</string>
+    <string name="image_description">Skin Image</string>
+    <string name="skin_name">Skin Name</string>
+    <string name="skin_weapon">Weapon</string>
+    <string name="skin_rarity">Rarity</string>
+    <string name="skin_price">$0.00</string>
 </resources>
