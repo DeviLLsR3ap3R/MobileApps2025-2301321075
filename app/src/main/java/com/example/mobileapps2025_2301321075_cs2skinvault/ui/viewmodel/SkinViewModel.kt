@@ -9,7 +9,7 @@ import com.example.mobileapps2025_2301321075_cs2skinvault.data.repository.SkinRe
 import kotlinx.coroutines.launch
 
 class SkinViewModel(private val repository: SkinRepository) : ViewModel() {
-    val allSkin: LiveData<List<Skin>> = repository.allSkins
+    val allSkins: LiveData<List<Skin>> = repository.allSkins
 
     fun insertSkin(skin: Skin) = viewModelScope.launch {
         repository.insertSkin(skin)
