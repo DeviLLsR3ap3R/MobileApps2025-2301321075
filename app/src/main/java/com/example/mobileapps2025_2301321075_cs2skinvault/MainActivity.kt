@@ -1,6 +1,7 @@
 package com.example.mobileapps2025_2301321075_cs2skinvault
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -22,11 +23,10 @@ import com.example.mobileapps2025_2301321075_cs2skinvault.ui.adapter.SkinAdapter
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.theme.MobileApps20252301321075CS2SkinVaultTheme
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.viewmodel.SkinViewModel
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.viewmodel.SkinViewModelFactory
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     private var rvSkins: RecyclerView? = null
-    private var addSkinButton: FloatingActionButton? = null
+    private var addSkinButton: Button? = null
     private var adapter: SkinAdapter? = null
     private lateinit var repository: SkinRepository
     private lateinit var viewModel: SkinViewModel

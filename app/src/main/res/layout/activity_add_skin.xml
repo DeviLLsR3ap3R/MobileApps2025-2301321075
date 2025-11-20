@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+    
+    <EditText
+        android:id="@+id/etSkinName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/skin_name"/>
+
+    <EditText
+        android:id="@+id/etWeapon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/skin_weapon"/>
+
+    <EditText
+        android:id="@+id/etRarity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/skin_rarity"/>
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/skin_price"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etImageUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/skin_imageURL" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingVertical="6dp">
+
+        <ImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/darker_gray"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:contentDescription="@string/iv_description" />
+
+        <Button
+            android:id="@+id/btnPickImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_image"
+            android:layout_marginStart="12dp" />
+
+        <Button
+            android:id="@+id/btnAddSkin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_skin"
+            android:layout_marginStart="12dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

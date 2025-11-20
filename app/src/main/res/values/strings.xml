@@ -6,4 +6,7 @@
     <string name="skin_weapon">Weapon</string>
     <string name="skin_rarity">Rarity</string>
     <string name="skin_price">$0.00</string>
+    <string name="skin_imageURL">Image URL (Optional)</string>
+    <string name="pick_image">Pick Image</string>
+    <string name="iv_description">Preview</string>
 </resources>
