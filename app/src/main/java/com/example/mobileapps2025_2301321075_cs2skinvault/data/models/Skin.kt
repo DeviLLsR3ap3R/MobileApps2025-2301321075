@@ -10,5 +10,6 @@ data class Skin(
     val weapon: String,
     val rarity: String,
     val price: Double,
-    val imageUrl: String?
+    val imageUrl: String?,
+    val imagePath: String?
 )

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.mobileapps2025_2301321075_cs2skinvault.R
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.models.Skin
+import java.io.File
 
 class SkinAdapter : ListAdapter<Skin, SkinAdapter.VH>(DIFF) {
     var lambdaOnClick: ((Skin?) -> Unit)? = null
@@ -49,10 +50,15 @@ class SkinAdapter : ListAdapter<Skin, SkinAdapter.VH>(DIFF) {
         holder.b.tvRarity.text = skin.rarity
         holder.b.tvPrice.text = "$${skin.price}"
 
-        if (!skin.imageUrl.isNullOrBlank()) {
-            holder.b.img.load(skin.imageUrl)
-        } else {
-            holder.b.img.setImageResource(android.R.drawable.ic_menu_gallery)
+        val imgView = holder.b.img
+        when {
+            !skin.imagePath.isNullOrBlank() && File(skin.imagePath).exists() ->
+                imgView.load(File(skin.imagePath))
+
+            !skin.imageUrl.isNullOrBlank() ->
+                imgView.load(skin.imageUrl)
+
+            else -> imgView.setImageResource(android.R.drawable.ic_menu_gallery)
         }
 
         holder.itemView.setOnClickListener {
