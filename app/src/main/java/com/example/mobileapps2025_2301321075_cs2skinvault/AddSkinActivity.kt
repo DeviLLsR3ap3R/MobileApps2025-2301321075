@@ -1,6 +1,5 @@
 package com.example.mobileapps2025_2301321075_cs2skinvault
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -108,7 +107,6 @@ class AddSkinActivity : AppCompatActivity() {
             ivPreview?.setImageResource(android.R.drawable.ic_menu_gallery)
             pickedImagePath = null
 
-            setResult(Activity.RESULT_OK)
             finish()
         }
     }

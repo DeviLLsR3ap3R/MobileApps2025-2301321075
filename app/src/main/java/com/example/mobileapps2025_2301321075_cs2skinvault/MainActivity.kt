@@ -1,26 +1,16 @@
 package com.example.mobileapps2025_2301321075_cs2skinvault
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.db.AppDatabase
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.repository.SkinRepository
-import com.example.mobileapps2025_2301321075_cs2skinvault.databinding.ActivityMainBinding
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.adapter.SkinAdapter
-import com.example.mobileapps2025_2301321075_cs2skinvault.ui.theme.MobileApps20252301321075CS2SkinVaultTheme
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.viewmodel.SkinViewModel
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.viewmodel.SkinViewModelFactory
 
@@ -57,7 +47,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         addSkinButton?.setOnClickListener {
-
+            val intent = Intent(this, AddSkinActivity::class.java)
+            startActivity(intent)
         }
 
         adapter?.lambdaOnClick = {
