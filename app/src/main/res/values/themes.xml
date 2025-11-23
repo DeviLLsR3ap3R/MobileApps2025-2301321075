@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MobileApps20252301321075CS2SkinVault" parent="android:Theme.Material.Light.NoActionBar" />
+    <!--<style name="Theme.MobileApps20252301321075CS2SkinVault" parent="android:Theme.Material.Light.NoActionBar" />-->
+    <style name="Theme.MobileApps20252301321075CS2SkinVault" parent="Theme.Material3.DayNight.NoActionBar" />
 </resources>

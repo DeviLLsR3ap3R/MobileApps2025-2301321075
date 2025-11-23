@@ -22,6 +22,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddSkinActivity"
+            android:exported="true"
+            android:label="Add Skin"
+            android:theme="@style/Theme.MobileApps20252301321075CS2SkinVault" />
+        <activity
+            android:name=".UpdateDeleteSkinActivity"
+            android:exported="true"
+            android:label="Update/Delete Skin"
+            android:theme="@style/Theme.MobileApps20252301321075CS2SkinVault" />
+
     </application>
 
 </manifest>
