@@ -9,4 +9,6 @@
     <string name="skin_imageURL">Image URL (Optional)</string>
     <string name="pick_image">Pick Image</string>
     <string name="iv_description">Preview</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="delete_skin">Delete Skin</string>
 </resources>

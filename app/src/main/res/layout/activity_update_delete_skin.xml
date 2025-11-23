@@ -68,13 +68,21 @@
                 android:layout_marginStart="12dp" />
 
             <Button
-                android:id="@+id/btnAddSkin"
+                android:id="@+id/btnSaveChanges"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_skin"
+                android:text="@string/save_changes"
                 android:layout_marginStart="12dp" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDeleteSkin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_skin"
+            android:layout_marginTop="12dp"
+            android:textColor="@android:color/holo_red_dark" />
 
     </LinearLayout>
 
