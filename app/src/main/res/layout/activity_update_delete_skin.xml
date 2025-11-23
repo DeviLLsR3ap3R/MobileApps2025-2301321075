@@ -84,6 +84,13 @@
             android:layout_marginTop="12dp"
             android:textColor="@android:color/holo_red_dark" />
 
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:layout_marginStart="12dp" />
+
     </LinearLayout>
 
 </ScrollView>

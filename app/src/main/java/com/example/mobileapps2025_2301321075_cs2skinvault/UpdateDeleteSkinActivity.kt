@@ -38,6 +38,8 @@ class UpdateDeleteSkinActivity : AppCompatActivity() {
     private var skinId: Int = -1
     private var currentSkin: Skin? = null
 
+    private var btnCancel: Button? = null
+
     private val pickImage = registerForActivityResult(
         ActivityResultContracts.OpenDocument()
     ) { uri: Uri? ->
@@ -63,6 +65,7 @@ class UpdateDeleteSkinActivity : AppCompatActivity() {
         btnPickImage = findViewById(R.id.btnPickImage)
         btnSaveChanges = findViewById(R.id.btnSaveChanges)
         btnDeleteSkin = findViewById(R.id.btnDeleteSkin)
+        btnCancel = findViewById(R.id.btnCancel)
 
         imageRepo = ImageRepository(this)
 
@@ -132,6 +135,10 @@ class UpdateDeleteSkinActivity : AppCompatActivity() {
                 Toast.makeText(this, "Skin deleted", Toast.LENGTH_SHORT).show()
                 finish()
             }
+        }
+
+        btnCancel?.setOnClickListener {
+            finish()
         }
     }
 }

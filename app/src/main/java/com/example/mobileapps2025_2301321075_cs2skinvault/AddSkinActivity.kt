@@ -34,6 +34,8 @@ class AddSkinActivity : AppCompatActivity() {
     private lateinit var repository: SkinRepository
     private lateinit var viewModel: SkinViewModel
 
+    private var btnCancel: Button? = null
+
     private val pickImage = registerForActivityResult(
         ActivityResultContracts.OpenDocument()
     ) { uri: Uri? ->
@@ -65,6 +67,7 @@ class AddSkinActivity : AppCompatActivity() {
         ivPreview = findViewById(R.id.ivPreview)
         btnPickImage = findViewById(R.id.btnPickImage)
         btnAddSkin = findViewById(R.id.btnAddSkin)
+        btnCancel = findViewById(R.id.btnCancel)
 
         imageRepo = ImageRepository(this)
 
@@ -107,6 +110,10 @@ class AddSkinActivity : AppCompatActivity() {
             ivPreview?.setImageResource(android.R.drawable.ic_menu_gallery)
             pickedImagePath = null
 
+            finish()
+        }
+
+        btnCancel?.setOnClickListener {
             finish()
         }
     }
