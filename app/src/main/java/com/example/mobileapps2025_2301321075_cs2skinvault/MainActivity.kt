@@ -51,8 +51,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        adapter?.lambdaOnClick = {
-
+        adapter?.lambdaOnClick = { skin ->
+            skin?.let {
+                val i = Intent(this, UpdateDeleteSkinActivity::class.java)
+                i.putExtra("skin_id", it.id)
+                startActivity(i)
+            }
         }
     }
 }

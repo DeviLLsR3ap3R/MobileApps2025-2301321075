@@ -22,6 +22,13 @@ class SkinViewModel(private val repository: SkinRepository) : ViewModel() {
     fun deleteSkin(skin: Skin) = viewModelScope.launch {
         repository.deleteSkin(skin)
     }
+
+    fun getSkinById(id: Int, callback: (Skin?) -> Unit) {
+        viewModelScope.launch {
+            val skin = repository.getSkinById(id)
+            callback(skin)
+        }
+    }
 }
 
 class SkinViewModelFactory(private val repository: SkinRepository) : ViewModelProvider.Factory {

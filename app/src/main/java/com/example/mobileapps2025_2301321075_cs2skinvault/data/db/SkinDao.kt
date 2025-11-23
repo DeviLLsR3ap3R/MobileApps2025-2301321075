@@ -21,4 +21,7 @@ interface SkinDao {
 
     @Query("SELECT * FROM skins")
     fun getAllSkins(): LiveData<List<Skin>>
+
+    @Query("SELECT * FROM skins WHERE id = :id")
+    fun getSkinById(id: Int): Skin?
 }
