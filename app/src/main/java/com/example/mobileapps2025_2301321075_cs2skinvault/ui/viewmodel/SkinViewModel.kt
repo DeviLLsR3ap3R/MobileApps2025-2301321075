@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.ViewModelProvider
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.models.Skin
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.repository.SkinRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SkinViewModel(private val repository: SkinRepository) : ViewModel() {
@@ -24,7 +25,7 @@ class SkinViewModel(private val repository: SkinRepository) : ViewModel() {
     }
 
     fun getSkinById(id: Int, callback: (Skin?) -> Unit) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val skin = repository.getSkinById(id)
             callback(skin)
         }

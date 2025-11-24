@@ -23,5 +23,5 @@ interface SkinDao {
     fun getAllSkins(): LiveData<List<Skin>>
 
     @Query("SELECT * FROM skins WHERE id = :id")
-    fun getSkinById(id: Int): Skin?
+    suspend fun getSkinById(id: Int): Skin?
 }
