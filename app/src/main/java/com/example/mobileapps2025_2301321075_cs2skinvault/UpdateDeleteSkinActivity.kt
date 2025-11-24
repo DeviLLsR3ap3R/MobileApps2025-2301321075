@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import coil.load
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.db.AppDatabase
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.models.Skin
@@ -18,6 +19,7 @@ import com.example.mobileapps2025_2301321075_cs2skinvault.data.repository.ImageR
 import com.example.mobileapps2025_2301321075_cs2skinvault.data.repository.SkinRepository
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.viewmodel.SkinViewModel
 import com.example.mobileapps2025_2301321075_cs2skinvault.ui.viewmodel.SkinViewModelFactory
+import java.io.File
 
 class UpdateDeleteSkinActivity : AppCompatActivity() {
     private var etSkinName: EditText? = null
@@ -39,6 +41,8 @@ class UpdateDeleteSkinActivity : AppCompatActivity() {
     private var currentSkin: Skin? = null
 
     private var btnCancel: Button? = null
+
+    private var btnShareSkin: Button? = null
 
     private val pickImage = registerForActivityResult(
         ActivityResultContracts.OpenDocument()
@@ -66,6 +70,7 @@ class UpdateDeleteSkinActivity : AppCompatActivity() {
         btnSaveChanges = findViewById(R.id.btnSaveChanges)
         btnDeleteSkin = findViewById(R.id.btnDeleteSkin)
         btnCancel = findViewById(R.id.btnCancel)
+        btnShareSkin = findViewById(R.id.btnShareSkin)
 
         imageRepo = ImageRepository(this)
 
@@ -139,6 +144,45 @@ class UpdateDeleteSkinActivity : AppCompatActivity() {
 
         btnCancel?.setOnClickListener {
             finish()
+        }
+
+        btnShareSkin?.setOnClickListener {
+            currentSkin?.let { skin ->
+                val shareText = buildString {
+                    append("Check out this CS2 skin!\n\n")
+                    append("Name: ${skin.weapon} | ${skin.name}")
+//                    append("Name: ${skin.name}\n")
+//                    append("Weapon: ${skin.weapon}\n")
+//                    append("Rarity: ${skin.rarity}\n")
+//                    append("Price: ${skin.price}\n")
+                }
+
+                val shareIntent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    type = "image/*"
+                }
+
+                val file = skin.imagePath?.let { File(it) }
+                if (file != null && file.exists()) {
+                    var uri = FileProvider.getUriForFile(
+                        this,
+                        "${packageName}.fileprovider",
+                        file
+                    )
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+                    shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                }
+
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
+
+//                val shareIntent = Intent().apply {
+//                    action = Intent.ACTION_SEND
+//                    putExtra(Intent.EXTRA_TEXT, shareText)
+//                    type = "text/plain"
+//                }
+
+                startActivity(Intent.createChooser(shareIntent, "Share skin via"))
+            }
         }
     }
 }

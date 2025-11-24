@@ -85,11 +85,18 @@
             android:textColor="@android:color/holo_red_dark" />
 
         <Button
+            android:id="@+id/btnShareSkin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/share_skin"
+            android:layout_marginTop="8dp"/>
+
+        <Button
             android:id="@+id/btnCancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
-            android:layout_marginStart="12dp" />
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 

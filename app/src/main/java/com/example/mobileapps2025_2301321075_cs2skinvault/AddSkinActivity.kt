@@ -69,6 +69,9 @@ class AddSkinActivity : AppCompatActivity() {
         btnAddSkin = findViewById(R.id.btnAddSkin)
         btnCancel = findViewById(R.id.btnCancel)
 
+        pickedImagePath = null
+        ivPreview?.setImageResource(android.R.drawable.ic_menu_gallery)
+
         imageRepo = ImageRepository(this)
 
         btnPickImage?.setOnClickListener {
